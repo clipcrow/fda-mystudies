@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
@@ -24,10 +24,10 @@
   <!--  Start top tab section-->
   <div class="right-content-head">
     <div class="text-right">
-      <div class="black-md-f text-uppercase dis-line pull-left line34">ACTIVE TASKS</div>
+      <div class="black-md-f text-uppercase dis-line pull-left line34">アクティブタスク</div>
 
       <div class="dis-line form-group mb-none mr-sm">
-        <button type="button" class="btn btn-default gray-btn cancelBut">Cancel</button>
+        <button type="button" class="btn btn-default gray-btn cancelBut">キャンセル</button>
       </div>
 
       <c:if test="${empty permission}">
@@ -37,7 +37,7 @@
             <button type="button" class="btn btn-primary blue-btn"
                     id="markAsComp" onclick="markAsCompleted();"
                     <c:if test="${!markAsComplete}">disabled</c:if>>
-              Mark as Completed
+              完了
             </button>
           </span>
         </div>
@@ -55,13 +55,13 @@
         <thead>
           <tr>
             <th style="display: none;" id=""></th>
-            <th id="">TITLE
+            <th id="">タイトル
               <span class="sort"></span>
             </th>
-            <th id="">TYPE
+            <th id="">タイプ
               <span class="sort"></span>
             </th>
-            <th id="">FREQUENCY
+            <th id="">実施の周期
               <span class="sort"></span>
             </th>
             <th id="">
@@ -69,7 +69,7 @@
                 <c:if test="${empty permission}">
                   <button type="button" class="btn btn-primary blue-btn"
                           onclick="addActiveTaskPage();">
-                    Add Active Task
+                    アクティブタスクの追加
                   </button>
                 </c:if>
               </div>
@@ -89,15 +89,15 @@
               <td>
                 <span class="sprites_icon preview-g mr-lg" data-toggle="tooltip"
                       data-placement="top"
-                      title="View"
+                      title="参照"
                       onclick="viewTaskInfo(${activeTasksInfo.id});"></span>
                 <span
                     class="${activeTasksInfo.action?'edit-inc':'edit-inc-draft mr-md'} mr-lg <c:if test="${not empty permission}"> cursor-none </c:if>"
-                    data-toggle="tooltip" data-placement="top" title="Edit" id="editTask"
+                    data-toggle="tooltip" data-placement="top" title="編集" id="editTask"
                     onclick="editTaskInfo(${activeTasksInfo.id});"></span>
                 <span
                     class="sprites_icon copy delete <c:if test="${not empty permission}"> cursor-none </c:if>"
-                    data-toggle="tooltip" data-placement="top" title="Delete" id="delTask"
+                    data-toggle="tooltip" data-placement="top" title="削除" id="delTask"
                     onclick="deleteTaskInfo(${activeTasksInfo.id});"></span>
               </td>
             </tr>
