@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
@@ -24,16 +24,16 @@
 
       <div class="dis-line form-group mb-none mr-sm">
         <button type="button" class="btn btn-default gray-btn" onclick="goToBackPage(this);">
-          Cancel
+          キャンセル
         </button>
       </div>
 
       <div class="dis-line form-group mb-none mr-sm">
-        <button type="button" class="btn btn-default gray-btn actBut" id="saveId">Save</button>
+        <button type="button" class="btn btn-default gray-btn actBut" id="saveId">下書き保存</button>
       </div>
 
       <div class="dis-line form-group mb-none">
-        <button type="button" class="btn btn-primary blue-btn actBut" id="doneId">Done</button>
+        <button type="button" class="btn btn-primary blue-btn actBut" id="doneId">完了</button>
       </div>
     </div>
   </div>
@@ -44,19 +44,19 @@
 
     <ul class="nav nav-tabs review-tabs gray-bg" id="tabsId">
       <li class="contentClass active">
-        <a data-toggle="tab" href="#content">Content</a>
+        <a data-toggle="tab" href="#content">タスク内容</a>
       </li>
       <li class="scheduleTaskClass linkDis" disabled>
         <a data-toggle="tab"
-           href="#schedule">Schedule
+           href="#schedule">スケジュール
         </a>
       </li>
     </ul>
     <div class="tab-content pl-xlg pr-xlg">
       <!-- Content-->
       <div id="content" class="tab-pane fade in active mt-xlg">
-        <div class="mt-md blue-md-f text-uppercase">Select Active Task</div>
-        <div class="gray-xs-f mt-md mb-sm">Choose from a list of pre-defined active tasks</div>
+        <div class="mt-md blue-md-f text-uppercase">アクティブタスクの選択</div>
+        <div class="gray-xs-f mt-md mb-sm">プリインストールされているアクティブタスクから選択します</div>
         <div class="col-md-4 p-none">
           <select class="selectpicker targetOption" id="targetOptionId" taskId="${activeTaskBo.id}"
                   title="Select">
@@ -101,7 +101,7 @@
       $('.targetOption').prop('disabled', true);
       $('.targetOption').addClass('linkDis');
       $('.activeText').empty().append(
-          'This task records fetal activity for a given duration of time,').append($("<br>")).append('in terms of the number of times the woman experiences kicks.');
+          'このタスクは、胎児が妊婦のお腹をキックする回数と期間を記録する。');
       $('.scheduleTaskClass').prop('disabled', false);
       $('.scheduleTaskClass').removeClass('linkDis');
     } else {

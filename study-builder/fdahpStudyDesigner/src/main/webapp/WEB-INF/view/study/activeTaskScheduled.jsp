@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
@@ -41,7 +41,7 @@
   }
 
 </style>
-<div class="gray-xs-f mb-sm">Active Task Schedule Type</div>
+<div class="gray-xs-f mb-sm">スケジュールタイプ</div>
 <div class="pb-lg ">
   <span class="radio radio-info radio-inline p-40">
     <input type="radio" id="schedule1" class="typeofschedule" scheduletype="Regular"
@@ -49,14 +49,14 @@
            name="scheduleType" ${empty activeTaskBo.scheduleType  || activeTaskBo.scheduleType=='Regular' ?'checked':''} ${(activeTaskBo.isDuplicate > 0)?'disabled' : ''}
     <c:if
         test="${empty anchorTypeList || fn:length(anchorTypeList) le 1}">'disabled'</c:if>>
-    <label for="schedule1">Regular</label>
+    <label for="schedule1">一般</label>
   </span>
   <span class="radio radio-inline p-40">
     <input type="radio" id="schedule2" class="typeofschedule" scheduletype="AnchorDate"
            value="AnchorDate"
            name="scheduleType" ${isAnchorQuestionnaire?'disabled':''} ${activeTaskBo.scheduleType=='AnchorDate' ?'checked':''} ${(activeTaskBo.isDuplicate > 0)?'disabled' : ''}
            <c:if test="${empty anchorTypeList}">disabled</c:if> >
-    <label for="schedule2">Anchor date based</label>
+    <label for="schedule2">基準日ベース</label>
   </span>
 </div>
 <!-- Anchor date type -->
@@ -85,34 +85,34 @@
   </div>
 </form:form>
 <!-- Ancor date type -->
-<div class="gray-xs-f mb-sm">Active Task Scheduling Options</div>
+<div class="gray-xs-f mb-sm">アクティブタスクの実行周期</div>
 <div class="pb-lg b-bor">
   <span class="radio radio-info radio-inline p-40">
     <input type="radio" id="oneTimeRadio1" class="schedule" frequencytype="oneTime"
            value="One time"
            name="frequency" ${empty activeTaskBo.frequency  || activeTaskBo.frequency=='One time' ?'checked':''} ${(activeTaskBo.isDuplicate > 0)?'disabled' : ''} >
-    <label for="oneTimeRadio1">One time</label>
+    <label for="oneTimeRadio1">1回のみ</label>
   </span>
   <span class="radio radio-inline p-40">
     <input type="radio" id="dailyRadio2" class="schedule" frequencytype="daily" value="Daily"
            name="frequency" ${activeTaskBo.frequency=='Daily' ?'checked':''} ${(activeTaskBo.isDuplicate > 0) ?'disabled' : ''}>
-    <label for="dailyRadio2">Daily</label>
+    <label for="dailyRadio2">日次</label>
   </span>
   <span class="radio radio-inline p-40">
     <input type="radio" id="weeklyRadio3" class="schedule" frequencytype="week" value="Weekly"
            name="frequency" ${activeTaskBo.frequency=='Weekly' ?'checked':''} ${(activeTaskBo.isDuplicate > 0) ?'disabled' : ''}>
-    <label for="weeklyRadio3">Weekly</label>
+    <label for="weeklyRadio3">週次</label>
   </span>
   <span class="radio radio-inline p-40">
     <input type="radio" id="monthlyRadio4" class="schedule" frequencytype="month" value="Monthly"
            name="frequency" ${activeTaskBo.frequency=='Monthly' ?'checked':''} ${(activeTaskBo.isDuplicate > 0) ?'disabled' : ''}>
-    <label for="monthlyRadio4">Monthly</label>
+    <label for="monthlyRadio4">月次</label>
   </span>
   <span class="radio radio-inline p-40">
     <input type="radio" id="manuallyRadio5" class="schedule" frequencytype="manually"
            value="Manually Schedule"
            name="frequency" ${activeTaskBo.frequency=='Manually Schedule' ?'checked':''} ${(activeTaskBo.isDuplicate > 0)?'disabled' : ''}>
-    <label for="manuallyRadio5">Custom Schedule</label>
+    <label for="manuallyRadio5">カスタム</label>
   </span>
 </div>
 <!-- One time Section-->
@@ -336,11 +336,11 @@
     <div class="mt-md">
       <div class="dailyStartCls col-md-3 pl-none">
         <span class="form-group m-none dis-inline vertical-align-middle pr-md">
-          <span class="gray-xs-f">Start date
+          <span class="gray-xs-f">開始日
             <span class="requiredStar"> *</span>
             <span class="ml-xs sprites_v3 filled-tooltip" data-toggle="tooltip"
                   data-placement="bottom"
-                  title="All date/time selections are based on server timezone."></span>
+                  title="この日付はサーバーのタイムゾーンに基づいています"></span>
           </span>
           <br/>
           <input id="startDate" type="text"
@@ -355,11 +355,11 @@
         <div class=" resetDate">
           <div>
             <span class="form-group m-none dis-inline vertical-align-middle pr-md">
-              <span class="gray-xs-f">Start date
+              <span class="gray-xs-f">開始日
                 <span class="requiredStar">*</span>
                 <span class="ml-xs sprites_v3 filled-tooltip" data-toggle="tooltip"
                       data-placement="bottom"
-                      title="All date/time selections are based on server timezone."></span>
+                      title="この日付はサーバーのタイムゾーンに基づいています"></span>
               </span>
               <br/>
               <span class="pr-md">Anchor Date</span>
@@ -398,7 +398,7 @@
       <!-- Anchordate End -->
       <div class="col-md-6 pr-none">
         <span class="form-group m-none dis-inline vertical-align-middle pr-md">
-          <span class="gray-xs-f">Number of times to repeat the task
+          <span class="gray-xs-f">繰り返し実施する回数
             <span
                 class="requiredStar"> *
             </span>
@@ -417,11 +417,11 @@
       <div class="clearfix"></div>
     </div>
     <div class="mt-md">
-      <div class="gray-xs-f mb-xs">End Date
+      <div class="gray-xs-f mb-xs">終了日
         <span class="ml-xs sprites_v3 filled-tooltip"
               data-toggle="tooltip"
               data-placement="bottom"
-              title="All date/time selections are based on server timezone.">
+              title="この日付はサーバーのタイムゾーンに基づいています"></span>
         </span>
       </div>
       <div class="black-xs-f"
@@ -431,11 +431,11 @@
     </div>
 
     <div class="mt-md">
-      <div class="gray-xs-f mb-sm">Time(s) of the day for daily occurrence
+      <div class="gray-xs-f mb-sm">実施する時刻
         <span class="requiredStar"> *</span>
         <span class="ml-xs sprites_v3 filled-tooltip" data-toggle="tooltip"
               data-placement="bottom" id="helpNote"
-              title="All date/time selections are based on server timezone."></span>
+              title="この時刻はサーバーのタイムゾーンに基づいています"></span>
       </div>
       <div class="dailyContainer">
         <c:if test="${fn:length(activeTaskBo.activeTaskFrequenciesList) eq 0}">
@@ -480,11 +480,11 @@
     </div>
 
     <div class="mt-lg">
-      <div class="gray-xs-f mb-xs">Lifetime of each run</div>
-      <div class="black-xs-f">Until the next run comes up</div>
+      <div class="gray-xs-f mb-xs">実施の有効期限</div>
+      <div class="black-xs-f">次回の実施がくるまで</div>
     </div>
     <div class="mt-lg">
-      <div class="gray-xs-f mb-xs">Lifetime of the task</div>
+      <div class="gray-xs-f mb-xs">タスクの有効期限</div>
       <div class="black-xs-f" id="lifeTimeId">${activeTaskBo.activeTaskLifetimeStart}
         - ${activeTaskBo.activeTaskLifetimeEnd}</div>
     </div>

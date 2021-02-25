@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
@@ -19,14 +19,14 @@
            name="currentPage">
     <div class="pt-lg">
       <div class="gray-xs-f mb-sm">
-        Activity Short Title or Key
-        <small>(50 characters max)</small>
+        ショートID
+        <small>(50文字まで)</small>
         <span
             class="requiredStar"> *
         </span>
         <span
             class="ml-xs sprites_v3 filled-tooltip" data-toggle="tooltip"
-            title="This must be a human-readable activity identifier and unique across all activities of the study.Note that this field cannot be edited once the study is Launched."></span>
+            title="このIDはこの治験に属する全てのアクティビティ中で一意なものにしてください。また、この項目は治験が公開されると編集できなくなります。"></span>
       </div>
       <div class="add_notify_option">
         <div class="form-group shortTitleClass">
@@ -42,14 +42,14 @@
     </div>
     <div>
       <div class="gray-xs-f mb-sm">
-        Display name
-        <small>(150 characters max)</small>
+        表示名
+        <small>(150文字まで)</small>
         <span
             class="requiredStar"> *
         </span>
         <span
             class="ml-xs sprites_v3 filled-tooltip" data-toggle="tooltip"
-            title="A name that gets displayed for the task in the app."></span>
+            title="これはアプリで表示されるタスク名になります"></span>
       </div>
       <div>
         <div class="form-group">
@@ -60,9 +60,9 @@
         </div>
       </div>
     </div>
-    <div class="mt-lg blue-md-f text-uppercase">Configurable parameters</div>
-    <div class="gray-xs-f mt-md mb-sm">Instructions
-      <small>(150 characters max)</small>
+    <div class="mt-lg blue-md-f text-uppercase">パラメータ設定</div>
+    <div class="gray-xs-f mt-md mb-sm">説明
+      <small>(150文字まで)</small>
       <span
           class="requiredStar"> *
       </span>
@@ -253,7 +253,7 @@
           <div class="clearfix"></div>
         </c:if>
         <c:if test="${taskMasterAttributeBo.orderByTaskType eq 7}">
-          <div class="blue-md-f text-uppercase">Results captured from the task</div>
+          <div class="blue-md-f text-uppercase">アクティブタスクのデータ</div>
         </c:if>
         <c:if test="${taskMasterAttributeBo.orderByTaskType eq 8}">
           <input type="hidden" name="taskAttributeValueBos[7].attributeValueId" value="">
@@ -1050,7 +1050,7 @@
           </c:if>
           <c:if test="${taskMasterAttributeBo.orderByTaskType eq 8 && count == 0}">
             <c:set var="count" value="${count+1}"/>
-            <div class="blue-md-f text-uppercase">Results captured from the task</div>
+            <div class="blue-md-f text-uppercase">アクティブタスクのデータ</div>
           </c:if>
           <c:if
               test="${taskMasterAttributeBo.orderByTaskType eq 8 && taskMasterAttributeBo.masterId eq taskValueAttributeBo.activeTaskMasterAttrId}">
