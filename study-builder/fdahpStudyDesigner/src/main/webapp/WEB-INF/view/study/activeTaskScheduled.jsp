@@ -481,7 +481,7 @@
 
     <div class="mt-lg">
       <div class="gray-xs-f mb-xs">実施の有効期限</div>
-      <div class="black-xs-f">次回の実施がくるまで</div>
+      <div class="black-xs-f">次回の実施まで</div>
     </div>
     <div class="mt-lg">
       <div class="gray-xs-f mb-xs">タスクの有効期限</div>

@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-         pageEncoding="ISO-8859-1" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
@@ -27,11 +26,11 @@
   <!--  Start top tab section-->
   <div class="right-content-head">
     <div class="text-right">
-      <div class="black-md-f text-uppercase dis-line pull-left line34">RESOURCES <c:set
+      <div class="black-md-f text-uppercase dis-line pull-left line34">リソース (文書ページ) <c:set
           var="isLive">${_S}isLive</c:set>
         ${not empty  sessionScope[isLive]?'<span class="eye-inc ml-sm vertical-align-text-top"></span>':''}</div>
       <div class="dis-line form-group mb-none mr-sm">
-        <button type="button" class="btn btn-default gray-btn cancelBut">Cancel</button>
+        <button type="button" class="btn btn-default gray-btn cancelBut">キャンセル</button>
       </div>
       <c:if test="${empty permission}">
         <div class="dis-line form-group mb-none">
@@ -41,7 +40,7 @@
             <button type="button" class="btn btn-primary blue-btn"
                     id="markAsComp" onclick="markAsCompleted();"
                     <c:if test="${fn:length(resourcesSavedList) ne 0}">disabled</c:if>>
-              Mark as Completed
+              完了
             </button>
           </span>
         </div>
@@ -59,11 +58,11 @@
             <th id="">
               <span class="marL10">#</span>
             </th>
-            <th id="">RESOURCE TITLE</th>
+            <th id="">リソースタイトル</th>
             <th class="text-right" id=""><c:if test="${empty permission}">
               <div class="dis-line form-group mb-none">
                 <button type="button" id="addResourceId"
-                        class="btn btn-primary blue-btn" onclick="addResource();">Add Resource
+                        class="btn btn-primary blue-btn" onclick="addResource();">リソースの追加
                 </button>
               </div>
             </c:if></th>
@@ -78,15 +77,15 @@
               <td class="wid50 text-right">
                 <span class="sprites_icon preview-g mr-lg"
                       data-toggle="tooltip"
-                      data-placement="top" title="View" id="viewRes"
+                      data-placement="top" title="参照" id="viewRes"
                       onclick="viewResourceInfo(${resourceInfo.id});"></span>
                 <span
                     class="${resourceInfo.action?'edit-inc':'edit-inc-draft mr-md'} mr-lg <c:if test="${not empty permission}"> cursor-none </c:if>"
-                    data-toggle="tooltip" data-placement="top" title="Edit" id="editRes"
+                    data-toggle="tooltip" data-placement="top" title="編集" id="editRes"
                     onclick="editResourceInfo(${resourceInfo.id});"></span>
                 <span
                     class="sprites_icon copy delete <c:if test="${not empty permission}"> cursor-none </c:if>"
-                    data-toggle="tooltip" data-placement="top" title="Delete" id="delRes"
+                    data-toggle="tooltip" data-placement="top" title="削除" id="delRes"
                     onclick="deleteResourceInfo(${resourceInfo.id});"></span>
               </td>
             </tr>

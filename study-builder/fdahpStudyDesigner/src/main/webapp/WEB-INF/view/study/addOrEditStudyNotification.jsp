@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
@@ -23,37 +23,37 @@
                id="goToNotificationListForm"><img
                 src="/studybuilder/images/icons/back-b.png" alt=""/></a>
           </span>
-          <c:if test="${notificationBO.actionPage eq 'edit'}">Edit Notification</c:if>
-          <c:if test="${notificationBO.actionPage eq 'addOrCopy'}">Add Notification</c:if>
-          <c:if test="${notificationBO.actionPage eq 'view'}">View Notification</c:if>
-          <c:if test="${notificationBO.actionPage eq 'resend'}">Resend Notification</c:if>
+          <c:if test="${notificationBO.actionPage eq 'edit'}">お知らせ通知の編集</c:if>
+          <c:if test="${notificationBO.actionPage eq 'addOrCopy'}">お知らせ通知の追加</c:if>
+          <c:if test="${notificationBO.actionPage eq 'view'}">お知らせ通知の参照</c:if>
+          <c:if test="${notificationBO.actionPage eq 'resend'}">お知らせ通知の再送信</c:if>
         </div>
 
         <div class="dis-line form-group mb-none">
           <button type="button" class="btn btn-default gray-btn goToNotificationListForm"
-                  id="goToStudyListPage">Cancel
+                  id="goToStudyListPage">キャンセル
           </button>
         </div>
         <div class="dis-line form-group mb-none">
           <button type="button" class="btn btn-primary gray-btn deleteNotificationButtonHide ml-sm"
-                  id="deleteStudyNotification">Delete
+                  id="deleteStudyNotification">削除
           </button>
         </div>
         <div class="dis-line form-group mb-none">
           <button type="button"
                   class="btn btn-default gray-btn studyNotificationButtonHide ml-sm mr-sm"
-                  id="saveStudyId">Save
+                  id="saveStudyId">下書き保存
           </button>
         </div>
         <div class="dis-line form-group mb-none">
           <button type="button" class="btn btn-primary blue-btn studyNotificationButtonHide mr-sm"
-                  id="doneStudyId">Done
+                  id="doneStudyId">完了
           </button>
         </div>
         <div class="dis-line form-group mb-none">
           <button type="button" class="btn btn-primary blue-btn resendBuuttonAsDone mr-sm"
                   id="resendStudyId">
-            Done
+            完了
           </button>
         </div>
       </div>
@@ -72,7 +72,7 @@
       </c:if>
 
       <div class="pl-none mt-none">
-        <div class="gray-xs-f mb-xs">Notification Text (250 characters max)
+        <div class="gray-xs-f mb-xs">通知本文 (250文字まで)
           <span
               class="requiredStar">*
           </span>
@@ -94,7 +94,7 @@
                    <c:if
                        test="${notificationBO.notificationScheduleType eq 'notImmediate'}">checked</c:if>
                    <c:if test="${notificationBO.actionPage eq 'addOrCopy'}">checked</c:if>>
-            <label for="inlineRadio1">Schedule a date / time</label>
+            <label for="inlineRadio1">予約送信</label>
           </span>
           <span class="radio radio-inline">
             <input type="radio" id="inlineRadio2" value="immediate" name="currentDateTime"
@@ -102,7 +102,7 @@
                        test="${notificationBO.notificationScheduleType eq 'immediate'}">checked</c:if>
                    <c:if test="${studyBo.status ne 'Active'}">disabled</c:if>>
             <label for="inlineRadio2" data-toggle="tooltip" data-placement="top"
-                   title="This option will be available once the study is launched.">Send Immediately</label>
+                   title="This option will be available once the study is launched.">即時送信</label>
           </span>
           <div class="help-block with-errors red-txt"></div>
           <c:if test="${not empty notificationHistoryNoDateTime}">

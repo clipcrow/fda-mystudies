@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
@@ -23,9 +23,9 @@
                 src="/studybuilder/images/icons/back-b.png" alt=""/></a>
           </span>
           <c:if test="${isstudyProtocol ne 'isstudyProtocol'}">
-            <c:if test="${actionOn eq 'add'}">Add Resource</c:if>
-            <c:if test="${actionOn eq 'edit'}">Edit Resource</c:if>
-            <c:if test="${not empty resourceBO && actionOn eq 'view'}">View Resource <c:set
+            <c:if test="${actionOn eq 'add'}">リソースの追加</c:if>
+            <c:if test="${actionOn eq 'edit'}">リソースの編集</c:if>
+            <c:if test="${not empty resourceBO && actionOn eq 'view'}">リソースの参照 <c:set
                 var="isLive">${_S}isLive</c:set>${not empty  sessionScope[isLive]?'<span class="eye-inc ml-sm vertical-align-text-top"></span>':''}
             </c:if>
           </c:if>
@@ -37,17 +37,17 @@
         <div class="dis-line form-group mb-none mr-sm">
           <button type="button" class="btn btn-default gray-btn goToResourceListForm"
                   id="goToStudyListPage">
-            Cancel
+            キャンセル
           </button>
         </div>
 
         <div class="dis-line form-group mb-none mr-sm">
-          <button type="button" class="btn btn-default gray-btn viewAct" id="saveResourceId">Save
+          <button type="button" class="btn btn-default gray-btn viewAct" id="saveResourceId">下書き保存
           </button>
         </div>
 
         <div class="dis-line form-group mb-none">
-          <button type="button" class="btn btn-primary blue-btn viewAct" id="doneResourceId">Done
+          <button type="button" class="btn btn-primary blue-btn viewAct" id="doneResourceId">完了
           </button>
         </div>
       </div>
@@ -67,8 +67,8 @@
       <div class="mt-none">
         <!-- form- input-->
         <div>
-          <div class="gray-xs-f mb-xs">Title <c:if
-              test="${isstudyProtocol ne 'isstudyProtocol'}">&nbsp;<small class="viewAct">(50 characters max)</small></c:if>
+          <div class="gray-xs-f mb-xs">タイトル <c:if
+              test="${isstudyProtocol ne 'isstudyProtocol'}">&nbsp;<small class="viewAct">(50文字まで)</small></c:if>
             <span
                 class="requiredStar"> *
             </span>
@@ -86,20 +86,20 @@
       <div class="clearfix"></div>
 
       <div>
-        <div class="gray-xs-f mb-xs">Content Type
+        <div class="gray-xs-f mb-xs">コンテンツタイプ
           <span class="requiredStar"> *</span>
         </div>
         <span class="radio radio-info radio-inline p-45">
           <input type="radio" class="addResource" id="inlineRadio1" name="textOrPdfParam"
                  value="0"
                  <c:if test="${not resourceBO.textOrPdf}">checked</c:if>>
-          <label for="inlineRadio1">Rich Text editor</label>
+          <label for="inlineRadio1">リッチテキスト入力</label>
         </span>
         <span class="radio radio-inline">
           <input type="radio" id="inlineRadio2" class="addResource" name="textOrPdfParam"
                  value="1"
                  <c:if test="${resourceBO.textOrPdf}">checked</c:if>>
-          <label for="inlineRadio2">Upload PDF</label>
+          <label for="inlineRadio2">PDFアップロード</label>
         </span>
       </div>
 
@@ -140,12 +140,12 @@
         <div class="clearfix"></div>
 
         <div class="mt-xs">
-          <div class="gray-xs-f mb-sm">Set a Period of Visibility for this resource?
+          <div class="gray-xs-f mb-sm">リソースの表示有効期限を設けますか？
             <span
                 class="requiredStar">*
             </span>
             <span data-toggle="tooltip" data-placement="top"
-                  title="If you choose Yes, the resource will be made available in the app for the selected time period. If you choose No, the Resource is available for the entire duration of the study."
+                  title="[ はい ]を選択すると、設定した期間のみ表示され、[ いいえ ]を選択すると治験が有効な間は表示し続けます。"
                   class="filled-tooltip"></span>
           </div>
           <span class="radio radio-info radio-inline p-45">
@@ -165,17 +165,17 @@
         <div class="clearfix"></div>
 
         <div class="mt-lg resetDate">
-          <div class="gray-xs-f mb-xs">Select Time Period
+          <div class="gray-xs-f mb-xs">有効期限のの設定
             <span class="requiredStar">*</span>
           </div>
           <div id="selectTime">
             <span class="radio radio-info radio-inline pr-md">
               <input type="radio" id="inlineRadio5" class="disRadBtn1" value="1"
                      name="resourceTypeParm">
-              <label for="inlineRadio5">Anchor Date-based Period</label><br/>
+              <label for="inlineRadio5">基準日ベースの設定</label><br/>
             </span>
             <div>
-              <div class="gray-xs-f col-md-3 col-lg-3 p-none mt-sm">Select Anchor Date Type
+              <div class="gray-xs-f col-md-3 col-lg-3 p-none mt-sm">基準日の選択
                 <span
                     class="requiredStar">*
                 </span>
@@ -196,7 +196,7 @@
               <div class="clearfix"></div>
             </div>
             <span class="mb-sm pr-md">
-              <span class="light-txt opacity06">Anchor Date</span>
+              <span class="light-txt opacity06">基準日の</span>
             </span>
             <span>
               <select class="signDropDown selectpicker sign-box" title="Select"
@@ -218,11 +218,11 @@
               <span class="help-block with-errors red-txt"></span>
             </span>
             <span class="mb-sm pr-md">
-              <span class="light-txt opacity06"> days
+              <span class="light-txt opacity06"> 日から
                 <span
-                    style="padding-right:5px;padding-left:5px">to
+                    style="padding-right:5px;padding-left:5px">
                 </span>
-                Anchor Date
+                基準日の
               </span>
             </span>
 
@@ -247,7 +247,7 @@
               <span class="help-block with-errors red-txt"></span>
             </span>
             <span class="mb-sm pr-md">
-              <span class="light-txt opacity06 disBtn1"> days</span>
+              <span class="light-txt opacity06 disBtn1"> 日まで</span>
             </span>
           </div>
         </div>
@@ -257,7 +257,7 @@
             <span class="radio radio-info radio-inline pr-md">
               <input type="radio" class="disRadBtn1" id="inlineRadio6" value="0"
                      name="resourceTypeParm">
-              <label for="inlineRadio6">Custom Date Range</label>
+              <label for="inlineRadio6">カスタム日付の設定</label>
             </span>
           </div>
           <div>
@@ -270,7 +270,7 @@
               <span class="help-block with-errors red-txt"></span>
             </span>
             <span class="gray-xs-f mb-sm pr-md">
-              to
+              から
             </span>
             <span class="form-group m-none dis-inline vertical-align-middle">
               <input id="EndDate" type="text"
@@ -286,9 +286,8 @@
         <div class="clearfix"></div>
 
         <div class="mt-sm">
-          <div class="gray-xs-f mb-xs">Text for notifying participants about the new resource being
-            available&nbsp;<small
-                class="viewAct">(250 characters max)
+          <div class="gray-xs-f mb-xs">新しいリソースの公開を通知するするテキスト&nbsp;<small
+                class="viewAct">(250文字まで)
             </small>
          
           </div>

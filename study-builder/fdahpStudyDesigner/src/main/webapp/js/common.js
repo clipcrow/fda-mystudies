@@ -129,13 +129,13 @@ $(document)
                       isShift = false;
                     if (!isShift && $(this).val()) {
                       // var regularExpression = /^[ A-Za-z0-9!\$%&\*\(\)_+|:"?,.\/;'\[\]=\-><@]*$/;
-                      var regularExpression = /^[ \u3041-\u3093\u30A1-\u30F6ヽヾゝゞ々ー。、「」（）\u4E00-\u9FFFA-Za-z0-9!\$%&\*\(\)_+|:"?,.\/;'\[\]=\-><@]*$/;
+                      var regularExpression = /^[ \u3041-\u3093\u30A1-\u30F6ヽヾゝゞ々ー。、「」（）１-９\u4E00-\u9FFFA-Za-z0-9!\$%&\*\(\)_+|:"?,.\/;'\[\]=\-><@]*$/;
                       if (!regularExpression.test($(this)
                           .val())) {
                         var newVal = $(this)
                             .val()
                             .replace(
-                                /[^ \u3041-\u3093\u30A1-\u30F6ヽヾゝゞ々ー。、「」（）\u4E00-\u9FFFA-Za-z0-9!\$%&\*\(\)_+|:"?,.\/;'\[\]=\-><@]/g,
+                                /[^ \u3041-\u3093\u30A1-\u30F6ヽヾゝゞ々ー。、「」（）１-９\u4E00-\u9FFFA-Za-z0-9!\$%&\*\(\)_+|:"?,.\/;'\[\]=\-><@]/g,
                                 '');
                         e.preventDefault();
                         $(this).val(newVal);
