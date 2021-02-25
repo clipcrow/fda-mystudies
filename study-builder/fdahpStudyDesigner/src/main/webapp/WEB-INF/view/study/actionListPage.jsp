@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-         pageEncoding="ISO-8859-1" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
@@ -9,7 +8,7 @@
   <!--  Start top tab section-->
   <div class="right-content-head">
     <div class="text-right">
-      <div class="black-md-f text-uppercase dis-line pull-left line34">ACTIONS</div>
+      <div class="black-md-f text-uppercase dis-line pull-left line34">治験の公開アクション</div>
       <div class="dis-line form-group mb-none mr-sm"></div>
       <div class="dis-line form-group mb-none"></div>
     </div>
@@ -31,9 +30,7 @@
                   disabled
                 </c:when>
               </c:choose>
-                  <c:if test="${not studyPermissionBO.viewPermission}">disabled</c:if>>Publish as
-            Upcoming
-            Study
+                  <c:if test="${not studyPermissionBO.viewPermission}">disabled</c:if>>お知らせとして事前公開する
           </button>
         </div>
       </c:if>
@@ -50,7 +47,7 @@
                   disabled
                 </c:when>
               </c:choose>
-                  <c:if test="${not studyPermissionBO.viewPermission}">disabled</c:if>>Unpublish
+                  <c:if test="${not studyPermissionBO.viewPermission}">disabled</c:if>>公開の取り消し
           </button>
         </div>
       </c:if>
@@ -66,8 +63,7 @@
                 disabled
               </c:when>
             </c:choose>
-                <c:if test="${not studyPermissionBO.viewPermission}">disabled</c:if>>Launch
-          Study
+                <c:if test="${not studyPermissionBO.viewPermission}">disabled</c:if>>治験を公開する
         </button>
       </div>
 
@@ -87,8 +83,7 @@
                 disabled
               </c:when>
             </c:choose>
-                <c:if test="${not studyPermissionBO.viewPermission}">disabled</c:if>>Publish
-          Updates
+                <c:if test="${not studyPermissionBO.viewPermission}">disabled</c:if>>更新内容を反映する
         </button>
       </div>
 
@@ -108,7 +103,7 @@
                 disabled
               </c:when>
             </c:choose>
-                <c:if test="${not studyPermissionBO.viewPermission}">disabled</c:if>>Pause
+                <c:if test="${not studyPermissionBO.viewPermission}">disabled</c:if>>治験を一時停止する
         </button>
       </div>
 
@@ -128,7 +123,7 @@
                 disabled
               </c:when>
             </c:choose>
-                <c:if test="${not studyPermissionBO.viewPermission}">disabled</c:if>>Resume
+                <c:if test="${not studyPermissionBO.viewPermission}">disabled</c:if>>一時停止から再開する
         </button>
       </div>
 
@@ -144,7 +139,7 @@
                 disabled
               </c:when>
             </c:choose>
-                <c:if test="${not studyPermissionBO.viewPermission}">disabled</c:if>>Deactivate
+                <c:if test="${not studyPermissionBO.viewPermission}">disabled</c:if>>治験を終了する
         </button>
       </div>
     </div>

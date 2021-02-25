@@ -2295,24 +2295,24 @@
     $('input').on('drop', function () {
       return false;
     });
-    $(document).find('input[type = text][custAttType != cust]').keyup(function (e) {
+    $(document).find('input[type = text][custAttType != cust]').change(function (e) {
       var evt = (e) ? e : window.event;
       var charCode = (evt.which) ? evt.which : evt.keyCode;
       if (charCode == 16)
         isShift = false;
       if (!isShift && $(this).val()) {
-        var regularExpression = /^[ A-Za-z0-9!\$%&\*\(\)_+|:"?,.\/;'\[\]=\-><@]*$/;
+        var regularExpression = /^[ \u3041-\u3093\u30A1-\u30F6ヽヾゝゞ々ー。、「」（）１-９\u4E00-\u9FFFA-Za-z0-9!\$%&\*\(\)_+|:"?,.\/;'\[\]=\-><@]*$/;
         if (!regularExpression.test($(this).val())) {
-          var newVal = $(this).val().replace(/[^ A-Za-z0-9!\$%&\*\(\)_+|:"?,.\/;'\[\]=\-><@]/g, '');
+          var newVal = $(this).val().replace(/[^ \u3041-\u3093\u30A1-\u30F6ヽヾゝゞ々ー。、「」（）１-９\u4E00-\u9FFFA-Za-z0-9!\$%&\*\(\)_+|:"?,.\/;'\[\]=\-><@]/g, '');
           e.preventDefault();
           $(this).val(newVal);
           $(this).parent().addClass("has-danger has-error");
           $(this).parent().find(".help-block").empty().append($("<ul><li> </li></ul>").attr("class","list-unstyled").text(
-              "Special characters such as #^}{ are not allowed."));
-        }
-      }
-    });
-    $(document).find('input[type = text][custAttType = cust]').keyup(function (e) {
+              "入力出来ない文字を削除しました。"));
+  }
+  }
+  });
+    $(document).find('input[type = text][custAttType = cust]').change(function (e) {
       var evt = (e) ? e : window.event;
       var charCode = (evt.which) ? evt.which : evt.keyCode;
       if (charCode == 16)
@@ -2325,7 +2325,7 @@
           $(this).val(newVal);
           $(this).parent().addClass("has-danger has-error");
           $(this).parent().find(".help-block").empty().append($("<ul><li> </li></ul>").attr("class","list-unstyled").text(
-              "The characters like (< >) are not allowed."));
+              "半角英数字を入力して下さい。また次の記号は入力出来ません。(< >)"));
         }
       }
     });
