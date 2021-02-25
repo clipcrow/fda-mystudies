@@ -88,7 +88,7 @@
   <div class="right-content-body pt-none pl-none pr-none">
     <ul class="nav nav-tabs review-tabs gray-bg">
       <li class="questionLevel active">
-        <a data-toggle="tab" href="#qla">Question-level Attributes
+        <a data-toggle="tab" href="#qla">質問定義
         </a>
       </li>
       <li class="responseLevel">
@@ -204,7 +204,7 @@
           <c:choose>
             <c:when test="${questionsBo.useAnchorDate}">
               <span class="tool-tip" data-toggle="tooltip" data-html="true" data-placement="top"
-                    title="The date supplied by a participant in response to this question can be used to dictate the schedule for other questionnaires or active tasks in the study, or to determine the Period of Visibility of study resources.">
+                    title="この質問に回答してユーザーから提供された日付を使用して、調査の他のアンケートまたはアクティブなタスクのスケジュールを決定したり、調査リソースの可視期間を決定することができます。">
                 <span class="checkbox checkbox-inline">
                   <input type="checkbox" id="useAnchorDateId" name="useAnchorDate"
                          value="true" ${questionsBo.useAnchorDate ? 'checked':''}
@@ -212,12 +212,12 @@
                   <c:if
                       test="${not empty questionsBo.isShorTitleDuplicate && (questionsBo.isShorTitleDuplicate gt 0)}">
                          disabled</c:if>>
-                  <label for="useAnchorDateId"> Use response as anchor date </label>
+                  <label for="useAnchorDateId"> 基準日を使用する </label>
                 </span>
               </span>
               <div class="clearfix"></div>
               <div class="col-md-6 p-none useAnchorDateName mt-md" style="display: none">
-                <div class="gray-xs-f mb-xs">Define name for anchor date
+                <div class="gray-xs-f mb-xs">基準日の名前定義
                   <span
                       class="requiredStar">*
                   </span>
@@ -233,9 +233,9 @@
             <c:otherwise>
               <span class="tool-tip" data-toggle="tooltip" data-html="true" data-placement="top"
                   <c:if
-                      test="${questionnaireBo.scheduleType eq 'AnchorDate'}"> title= "This option has been disabled, since this questionnaire has anchor-date based scheduling already."</c:if>
+                      test="${questionnaireBo.scheduleType eq 'AnchorDate'}"> title= "このアンケートには基準日ベースのスケジュールがすでに設定されているため、このオプションは無効になっています"</c:if>
                   <c:if
-                      test="${questionnaireBo.frequency ne 'One time' || questionnaireBo.scheduleType eq 'Regular'}"> title= "The date supplied by a participant in response to this question can be used to dictate the schedule for other questionnaires or active tasks in the study, or to determine the Period of Visibility of study resources."</c:if>
+                      test="${questionnaireBo.frequency ne 'One time' || questionnaireBo.scheduleType eq 'Regular'}"> title= "この質問に回答してユーザーから提供された日付を使用して、調査の他のアンケートまたはアクティブなタスクのスケジュールを決定したり、調査リソースの可視期間を決定することができます。"</c:if>
               >
                 <span class="checkbox checkbox-inline">
                   <input type="checkbox" id="useAnchorDateId" name="useAnchorDate"
@@ -340,10 +340,10 @@
             </div>
             <div class="clearfix"></div>
             <div>
-              <div class="gray-xs-f mb-xs">Allow rollback of chart?
+              <div class="gray-xs-f mb-xs">チャートのやり直しを可能にしますか？
                 <span class="sprites_icon info"
                       data-toggle="tooltip"
-                      title="If you select Yes, the chart will be allowed for rollback until the date of enrollment into the study."></span>
+                      title="[はい]を選択すると、治験への登録日までチャートを戻すことができます。"></span>
               </div>
               <div>
                 <span class="radio radio-info radio-inline p-45">
@@ -361,7 +361,7 @@
             </div>
             <div class="clearfix"></div>
             <div class="col-md-4 col-lg-4 p-none">
-              <div class="gray-xs-f mb-xs">Title for the chart (1 to 30 characters)
+              <div class="gray-xs-f mb-xs">チャートのタイトル (1文字以上 30文字以下)
                 <span
                     class="requiredStar">*
                 </span>
@@ -389,7 +389,7 @@
         <div class="clearfix"></div>
         <div id="statContainer" style="display: none">
           <div class="col-md-6 col-lg-4 p-none">
-            <div class="gray-xs-f mb-xs">Short identifier name (1 to 20 characters)
+            <div class="gray-xs-f mb-xs">ショートID (半角英数字 1文字以上 20文字以下)
               <span
                   class="requiredStar">*
               </span>
@@ -408,9 +408,7 @@
           </div>
           <div class="clearfix"></div>
           <div class="col-md-10 p-none">
-            <div class="gray-xs-f mb-xs">Display name for the Stat (e.g. Total Hours of Activity
-              Over 6
-              Months) (1 to 50 characters)
+            <div class="gray-xs-f mb-xs">統計の表示名  (1文字以上 50文字以下)
               <span class="requiredStar">*</span>
             </div>
             <div class="form-group">
@@ -422,13 +420,13 @@
           </div>
           <div class="clearfix"></div>
           <div class="col-md-6 col-lg-4 p-none">
-            <div class="gray-xs-f mb-xs">Display Units (e.g. hours) (1 to 15 characters)
+            <div class="gray-xs-f mb-xs">単位の表示名 (1文字以上 15文字以下)
               <span
                   class="requiredStar">*
               </span>
               <span class="ml-xs sprites_v3 filled-tooltip"
                     data-toggle="tooltip"
-                    title="For Response Types of Time Interval and Height, participant responses are saved in hours and cms respectively. Please enter units accordingly."></span>
+                    title="時間間隔と高さの応答タイプの場合、参加者の応答はそれぞれ時間とcmで保存されます。それに応じて単位を入力してください。"></span>
             </div>
             <div class="form-group">
               <input type="text" class="form-control requireClass" name="statDisplayUnits"
@@ -439,7 +437,7 @@
           </div>
           <div class="clearfix"></div>
           <div class="col-md-4 col-lg-3 p-none">
-            <div class="gray-xs-f mb-xs">Stat Type for image upload
+            <div class="gray-xs-f mb-xs">統計画像のアップロード
               <span
                   class="requiredStar">*
               </span>
@@ -459,7 +457,7 @@
           </div>
           <div class="clearfix"></div>
           <div class="col-md-10 p-none">
-            <div class="gray-xs-f mb-xs">Formula for to be applied
+            <div class="gray-xs-f mb-xs">適用する計算式
               <span
                   class="requiredStar">*
               </span>
@@ -479,7 +477,7 @@
           </div>
           <div class="clearfix"></div>
           <div class="col-md-10 p-none">
-            <div class="gray-xs-f mb-xs">Time ranges options available to the mobile app user</div>
+            <div class="gray-xs-f mb-xs">アプリユーザーが利用できる時間範囲のオプション</div>
             <div class="clearfix"></div>
           </div>
           <div class="clearfix"></div>
@@ -986,13 +984,13 @@
                 <input type="radio" class="LocationRequired" id="useCurrentLocationYes"
                        value="true"
                        name="questionReponseTypeBo.useCurrentLocation"  ${empty questionsBo.questionReponseTypeBo.useCurrentLocation || questionsBo.questionReponseTypeBo.useCurrentLocation eq true ? 'checked':''} >
-                <label for="useCurrentLocationYes">Yes</label>
+                <label for="useCurrentLocationYes">はい</label>
               </span>
               <span class="radio radio-inline">
                 <input type="radio" class="LocationRequired" id="useCurrentLocationNo"
                        value="false"
                        name="questionReponseTypeBo.useCurrentLocation" ${questionsBo.questionReponseTypeBo.useCurrentLocation eq false ? 'checked':''} >
-                <label for="useCurrentLocationNo"">No</label>
+                <label for="useCurrentLocationNo"">いいえ</label>
               </span>
               <div class="help-block with-errors red-txt"></div>
             </div>
@@ -1002,7 +1000,7 @@
           <div class="row mt-sm">
             <div class="col-md-6 pl-none">
               <div class="col-md-12 col-lg-12 p-none">
-                <div class="gray-xs-f mb-xs">Placeholder Text (1 to 40 characters)
+                <div class="gray-xs-f mb-xs">プレースホルダー (1文字以上 40文字以下)
                   <span
                       class="ml-xs sprites_v3 filled-tooltip" data-toggle="tooltip"
                       title="Enter an input hint to the user"></span>
@@ -1019,7 +1017,7 @@
         </div>
         <div id="Text" style="display: none">
           <div class="mt-lg">
-            <div class="gray-xs-f mb-xs">複数行の入力を許可しかすか？
+            <div class="gray-xs-f mb-xs">複数行の入力を許可しますか？
               <span class="requiredStar">*</span>
               <span
                   class="ml-xs sprites_v3 filled-tooltip" data-toggle="tooltip"
@@ -1177,7 +1175,7 @@
         </div>
         <div id="Height" style="display: none">
           <div class="mt-lg">
-            <div class="gray-xs-f mb-xs">測定システム
+            <div class="gray-xs-f mb-xs">測定形式
               <span class="requiredStar">*</span>
               <span
                   class="ml-xs sprites_v3 filled-tooltip" data-toggle="tooltip"
@@ -1262,7 +1260,7 @@
               <span class="requiredStar">*</span>
               <span
                   class="ml-xs sprites_v3 filled-tooltip" data-toggle="tooltip"
-                  title="Choose the kind of numeric input needed"></span>
+                  title="入力する数値の種類を選択してください"></span>
             </div>
             <div class="form-group">
               <span class="radio radio-info radio-inline p-45">
@@ -1354,7 +1352,7 @@
               <span class="requiredStar">*</span>
               <span
                   class="ml-xs sprites_v3 filled-tooltip" data-toggle="tooltip"
-                  title="Choose the kind of numeric input needed"></span>
+                  title="ユーザーからの入力を、日付のみか、日付と時刻とするかを選択してください。"></span>
             </div>
             <div class="form-group">
               <span class="radio radio-info radio-inline p-45">
@@ -1377,7 +1375,7 @@
               <span class="requiredStar">*</span>
               <span
                   class="ml-xs sprites_v3 filled-tooltip" data-toggle="tooltip"
-                  title="Participants will be allowed to choose a date from the date range you set here. The option 'Until current date' includes the current date as well.Date or date/time will apply as per your selection in the previous field."></span>
+                  title="ユーザーは、ここで設定した日付範囲から日付を選択します。オプション「現在の日付まで」には、現在の日付も含まれます。前のフィールドでの選択に従って、日付または日付/時刻が適用されます。"></span>
             </div>
             <div class="form-group">
               <span class="radio radio-info radio-inline p-45">
@@ -1482,7 +1480,7 @@
               </div>
             </div>
             <div class="col-md-3 pl-none">
-              <div class="gray-xs-f mb-xs">値
+              <div class="gray-xs-f mb-xs">選択値
                 <span class="requiredStar">*</span>
               </div>
               <div class="form-group">
@@ -1670,7 +1668,7 @@
               </div>
             </div>
             <div class="col-md-4 pl-none">
-              <div class="gray-xs-f mb-xs">値 (1文字以上 100文字以下)
+              <div class="gray-xs-f mb-xs">選択値 (1文字以上 100文字以下)
                   <span
                     class="requiredStar">*
                 </span>
@@ -1898,11 +1896,11 @@
                                     test="${empty questionsBo.questionReponseTypeBo.selectionStyle || questionsBo.questionReponseTypeBo.selectionStyle eq 'Single'}">disabled</c:if> >
                           <option
                               value="Yes" ${questionResponseSubType.exclusive eq 'Yes' ? 'selected' :''}>
-                            Yes
+                            はい
                           </option>
                           <option
                               value="No" ${questionResponseSubType.exclusive eq 'No' ? 'selected' :''}>
-                            No
+                            いいえ
                           </option>
                         </select>
                         <div class="help-block with-errors red-txt"></div>
