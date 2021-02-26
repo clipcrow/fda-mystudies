@@ -116,7 +116,7 @@
           <div class="dis-line form-group mb-none mr-sm">
             <c:if test="${empty permission}">
               <button type="button" class="btn btn-primary blue-btn"
-                      id="addQaId">+ 質問の追加
+                      id="addQaId"> 質問の追加
               </button>
             </c:if>
           </div>
@@ -270,7 +270,7 @@
                   "info": false,
                   "filter": false,
                   language: {
-                    "zeroRecords": "You haven't created any content yet.",
+                    "zeroRecords": "レコードはまだ登録されていません。",
                   },
                   rowReorder: reorder,
                   "columnDefs": [{

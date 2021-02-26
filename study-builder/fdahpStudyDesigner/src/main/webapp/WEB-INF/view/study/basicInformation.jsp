@@ -26,21 +26,20 @@
 
 
         <div class="dis-line form-group mb-none mr-sm">
-          <button type="button" class="btn btn-default gray-btn cancelBut">Cancel</button>
+          <button type="button" class="btn btn-default gray-btn cancelBut">キャンセル</button>
         </div>
         <c:if test="${empty permission}">
           <div class="dis-line form-group mb-none mr-sm">
             <button type="button" class="btn btn-default gray-btn actBut"
                     id="saveId"
-                    <c:if test="${not studyBo.viewPermission }">disabled</c:if>>Save
+                    <c:if test="${not studyBo.viewPermission }">disabled</c:if>>下書き保存
             </button>
           </div>
 
           <div class="dis-line form-group mb-none">
             <button type="button" class="btn btn-primary blue-btn actBut"
                     id="completedId"
-                    <c:if test="${not studyBo.viewPermission }">disabled</c:if>>Mark
-              as Completed
+                    <c:if test="${not studyBo.viewPermission }">disabled</c:if>>完了
             </button>
           </div>
         </c:if>
@@ -983,7 +982,7 @@
                       .empty()
                       .append($("<ul><li> </li></ul>").attr("class","list-unstyled").text(
                           customStudyId
-                          + " has already been used in the past."));
+                          + " このIDは既に登録されています。"));
                   callback(false);
                 }
               },

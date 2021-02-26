@@ -2111,7 +2111,7 @@
         </div>
         <div id="ImageChoice" style="display: none;">
           <div class="mt-lg">
-            <div class="gray-choice-f mb-xs">選択肢画像
+            <div class="gray-choice-f mb-xs">画像選択肢
               <span
                   class="ml-xs sprites_v3 filled-tooltip"
                   data-toggle="tooltip"

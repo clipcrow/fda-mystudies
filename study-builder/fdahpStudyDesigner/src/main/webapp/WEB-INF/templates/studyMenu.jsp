@@ -122,7 +122,7 @@
       $('.cancelBut').prop('disabled', true);
       bootbox.confirm({
         closeButton: false,
-        message: 'You are about to leave the page and any unsaved changes will be lost. Are you sure you want to proceed?',
+        message: '未保存の編集があります。保存をしないと編集内容が削除されてしまいます。本当にこのページを離れますか？',
         buttons: {
           'cancel': {
             label: 'Cancel',
