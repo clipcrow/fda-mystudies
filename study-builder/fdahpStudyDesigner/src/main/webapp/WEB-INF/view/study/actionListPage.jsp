@@ -170,7 +170,7 @@
       if (buttonText == 'unpublishId' || buttonText == 'pauseId'
           || buttonText == 'deactivateId') {
         if (buttonText == 'unpublishId') {
-          message: '未保存の編集があります。保存をしないと編集内容が削除されてしまいます。本当にこのページを離れますか？',
+          messageText = "未保存の編集があります。保存をしないと編集内容が削除されてしまいます。本当にこのページを離れますか？";
         } else if (buttonText == 'pauseId') {
           messageText = "You are attempting to Pause the study. Mobile app users can no longer participate in study activities until you resume the study again. However, they will still be able to view the study dashboard and study resources. Are you sure you wish to proceed?";
         } else if (buttonText == 'deactivateId') {
@@ -181,10 +181,10 @@
           message: messageText,
           buttons: {
             'cancel': {
-              label: 'Cancel',
+              label: 'キャンセル',
             },
             'confirm': {
-              label: 'OK',
+              label: 'はい',
             },
           },
           callback: function (result) {

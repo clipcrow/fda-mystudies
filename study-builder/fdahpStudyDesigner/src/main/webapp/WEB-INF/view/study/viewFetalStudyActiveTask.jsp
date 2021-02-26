@@ -174,7 +174,7 @@
           </div>
 
           <div class="bor-b-dash">
-            <div class="gray-xs-f mb-sm">Title for the chart
+            <div class="gray-xs-f mb-sm">表のタイトル
               <small>(30 characters max)</small>
               <span
                   class="requiredStar"> *
@@ -196,7 +196,7 @@
                  id="${taskMasterAttributeBo.attributeName}_stat_id"
                  name="taskAttributeValueBos[2].useForStatistic"
                  value="option1">
-          <label for="${taskMasterAttributeBo.attributeName}_stat_id">Use for Statistic</label>
+          <label for="${taskMasterAttributeBo.attributeName}_stat_id">統計に使用</label>
         </span>
       </div>
       <div class="addLineStaticBlock_${taskMasterAttributeBo.attributeName}" style="display:none">
