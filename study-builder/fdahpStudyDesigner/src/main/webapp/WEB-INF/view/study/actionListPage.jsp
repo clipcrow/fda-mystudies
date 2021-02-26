@@ -170,7 +170,7 @@
       if (buttonText == 'unpublishId' || buttonText == 'pauseId'
           || buttonText == 'deactivateId') {
         if (buttonText == 'unpublishId') {
-          messageText = "You are attempting to Unpublish the study. Are you sure you wish to proceed?";
+          message: '未保存の編集があります。保存をしないと編集内容が削除されてしまいます。本当にこのページを離れますか？',
         } else if (buttonText == 'pauseId') {
           messageText = "You are attempting to Pause the study. Mobile app users can no longer participate in study activities until you resume the study again. However, they will still be able to view the study dashboard and study resources. Are you sure you wish to proceed?";
         } else if (buttonText == 'deactivateId') {
@@ -212,11 +212,11 @@
                             messageText);
                 } else {
                   if (buttonText == 'publishId') {
-                    messageText = "The Basic Information, Settings, Overview and Consent sections must be marked complete before publishing a study as upcoming. Please complete these sections and try again.";
+                    messageText = "治験を今後公開する前に、基本情報、設定、概要、および同意のセクションに完了のマークを付ける必要があります。これらのセクションを完了して、再試行してください。";
                   } else if (buttonText == 'lunchId') {
-                    messageText = "All Study Builder sections must be marked complete to publish the study. Please complete these sections to proceed.";
+                    messageText = "治験を公開するためには、全てのセクションが完了になっている必要があります。続行するにはこれらのセクションを全て完了にしてください。";
                   } else if (buttonText == 'updatesId') {
-                    messageText = "All Study Builder sections must be marked complete to publish updates to the study. Please complete these sections to proceed.";
+                    messageText = "治験を公開するためには、全てのセクションが完了になっている必要があります。続行するにはこれらのセクションを全て完了にしてください。";
                   }
                   bootbox.confirm(message, function (result) {
                     bootbox.alert(messageText);
@@ -244,13 +244,13 @@
 
   function showBootBoxMessage(buttonText, messageText) {
     if (buttonText == 'resumeId') {
-      messageText = "Resuming the study will allow mobile app users to resume participation. Would you like to proceed?";
+      messageText = "治験を再開すると、アプリユーザーは参加を再開できます。続行してよろしいですか？";
     } else if (buttonText == 'publishId') {
-      messageText = "Publishing the study as \"upcoming\" will enable mobile app users to see the study overview and consent form, but will not allow enrollment. Would you like to proceed?";
+      messageText = "調査を「事前公開」として公開すると、アプリユーザーは治験の概要と同意フォームを確認できますが、参加することはできません。続行してよろしいですか？";
     } else if (buttonText == 'lunchId') {
-      messageText = "Launching the study will allow mobile application users to see the study and start participating. Would you like to proceed?";
+      messageText = "治験の公開を行ってよろしいですか？これによりアプリユーザーは治験内容を確認して参加することが可能になります";
     } else if (buttonText == 'updatesId') {
-      messageText = "Publishing study updates will allow mobile application users to see the changes to the study. Would you like to proceed?";
+      messageText = "治験の更新を公開してもよろしいですか？なお、アプリユーザーは治験の変更を確認することが出来ます。";
     }
     bootbox.confirm({
       closeButton: false,

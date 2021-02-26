@@ -343,7 +343,7 @@
             ${empty questionnaireBo.scheduleType  || questionnaireBo.scheduleType=='Regular' ?'checked':''}
             ${(questionnaireBo.shortTitleDuplicate > 0)?'disabled' : ''}
             <c:if test="${empty anchorTypeList || fn:length(anchorTypeList) le 1}">'disabled'</c:if>>
-            <label for="schedule1">レギューラー</label>
+            <label for="schedule1">レギュラー</label>
           </span>
           <span id="anchorspanId" class="tool-tip" data-toggle="tooltip"
                 data-html="true" data-placement="top"
@@ -598,7 +598,7 @@
                   name="questionnairesFrequenciesBo.isStudyLifeTime" value="true"
                 ${questionnaireBo.questionnairesFrequenciesBo.isStudyLifeTime ?'checked':''}
                   required ${(questionnaireBo.shortTitleDuplicate>
-                  0)?'disabled' : ''}> <label for="isStudyLifeTime"> Study Lifetime </label>
+                  0)?'disabled' : ''}> <label for="isStudyLifeTime"> 治験の有効期限まで </label>
               </span>
               <div class="mt-md form-group regularClass">
                 <span

@@ -40,7 +40,7 @@
             </button>
           </div>
           <div class="dis-line form-group mb-none mr-sm">
-            <button type="button" class="btn btn-default gray-btn" id="saveId">一時保存</button>
+            <button type="button" class="btn btn-default gray-btn" id="saveId">下書き保存</button>
           </div>
           <div class="dis-line form-group mb-none">
             <button type="button" class="btn btn-primary blue-btn" id="doneId">完了
@@ -100,7 +100,7 @@
                     <span
                         class="requiredStar">*
                     </span>
-                    E.g. Sharing Options
+                    E.g. データ共有について
                   </div>
                   <div class="form-group custom-form">
                     <input type="text" class="form-control requiredClass"
@@ -798,7 +798,7 @@
     $(item).prop('disabled', true);
     bootbox.confirm({
       closeButton: false,
-      message: 'You are about to leave the page and any unsaved changes will be lost. Are you sure you want to proceed?',
+      message: '未保存の編集があります。保存をしないと編集内容が削除されてしまいます。本当にこのページを離れますか？',
       buttons: {
         'cancel': {
           label: 'Cancel',

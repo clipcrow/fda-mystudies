@@ -225,7 +225,7 @@
           </div>
         </div>
         <div class="col-md-10 p-none">
-          <div class="gray-xs-f mb-xs">Description of the question (1 to 500 characters)</div>
+          <div class="gray-xs-f mb-xs">質問の概要 (1文字以上 500文字以下)</div>
           <div class="form-group">
             <textarea class="form-control" rows="4" name="questionsBo.description"
                       id="descriptionId"
@@ -1798,7 +1798,7 @@
           </div>
           <div id="TextScale" style="display: none;">
             <div class="clearfix"></div>
-            <div class="gray-choice-f mb-xs">Text Choices
+            <div class="gray-choice-f mb-xs">テキスト選択肢
               <span
                   class="ml-xs sprites_v3 filled-tooltip"
                   data-toggle="tooltip"
@@ -2265,7 +2265,7 @@
                     </c:if>
                     <div class="col-md-12 p-none display__flex__">
                       <div class="col-md-10 pl-none">
-                        <div class="gray-xs-f mb-xs">説明(1文字以上 150文字以下)
+                        <div class="gray-xs-f mb-xs">説明(1文字以上 150文字以下)</div>
                         <div class="form-group">
                           <textarea type="text" class="form-control"
                                     name="questionResponseSubTypeList[0].description"
@@ -2370,7 +2370,7 @@
                     </c:if>
                     <div class="col-md-12 p-none display__flex__">
                       <div class="col-md-10 pl-none">
-                        <div class="gray-xs-f mb-xs">説明(1文字以下 150文字以下)
+                        <div class="gray-xs-f mb-xs">説明(1文字以上 150文字以下)</div>
                         <div class="form-group">
                           <textarea type="text" class="form-control"
                                     name="questionResponseSubTypeList[1].description"
@@ -2543,13 +2543,11 @@
                 </div>
               </div>
             </div>
-
-
           </div>
 
           <div id="ImageChoice" style="display: none;">
             <div class="mt-lg">
-              <div class="gray-choice-f mb-xs">選択肢画像
+              <div class="gray-choice-f mb-xs">画像選択肢
                 <span
                     class="ml-xs sprites_v3 filled-tooltip"
                     data-toggle="tooltip"
@@ -5687,7 +5685,7 @@
       <c:if test="${actionTypeForQuestionPage ne 'view'}">
       bootbox.confirm({
         closeButton: false,
-        message: 'You are about to leave the page and any unsaved changes will be lost. Are you sure you want to proceed?',
+        message: '未保存の編集があります。保存をしないと編集内容が削除されてしまいます。本当にこのページを離れますか？',
         buttons: {
           'cancel': {
             label: 'Cancel',
@@ -6187,7 +6185,7 @@
                 $(thisAttr).parent().find(".help-block").append(
                   $("<ul><li> </li></ul>").attr("class","list-unstyled").text(
                     shortTitle
-                    + " has already been used in the past."));
+                    + " は既に使用されています"));
                 callback(false);
               }
             },
@@ -6236,7 +6234,7 @@
                 $("#statShortNameId").parent().find(".help-block").append(
                   $("<ul><li> </li></ul>").attr("class","list-unstyled").text(
                     short_title
-                    + " has already been used in the past."));
+                    + " は既に使用されています"));
                 if (callback)
                   callback(false);
 
@@ -7113,8 +7111,8 @@
           $(thisAttr).parent().find(".help-block").append(
         	$("<ul><li> </li></ul>").attr("class","list-unstyled").text(
               anchordateText
-              + " has already been used in the past."));
-          callback(false);
+              + " は既に使用されています"));
+    callback(false);
         } else {
           $(thisAttr).parent().removeClass("has-danger").removeClass("has-error");
           $(thisAttr).parent().find(".help-block").empty();
@@ -7145,7 +7143,7 @@
                 $(thisAttr).parent().find(".help-block").append(
                   $("<ul><li> </li></ul>").attr("class","list-unstyled").text(
                     anchordateText
-                    + " has already been used in the past."));
+                    + " は既に使用されています"));
                 callback(false);
               }
             },
