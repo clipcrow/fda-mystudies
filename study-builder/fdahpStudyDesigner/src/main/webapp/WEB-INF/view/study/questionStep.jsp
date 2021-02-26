@@ -336,12 +336,12 @@
                          disabled </c:if> <c:if
                       test="${not empty questionnairesStepsBo.isShorTitleDuplicate && (questionnairesStepsBo.isShorTitleDuplicate gt 0)}">
                          disabled</c:if>>
-                  <label for="useAnchorDateId"> Use response as anchor date </label>
+                  <label for="useAnchorDateId"> 基準日を使用しますか？ </label>
                 </span>
               </span>
               <div class="clearfix"></div>
               <div class="col-md-6 p-none useAnchorDateName mt-md" style="display: none">
-                <div class="gray-xs-f mb-xs">Define name for anchor date
+                <div class="gray-xs-f mb-xs">基準日名
                   <span
                       class="requiredStar">*
                   </span>
@@ -2959,10 +2959,10 @@
                       <input type="checkbox" id="formulaBasedLogicId" value="Yes"
                              name="questionReponseTypeBo.formulaBasedLogic" ${questionnairesStepsBo.questionReponseTypeBo.formulaBasedLogic eq 'Yes' ? 'checked':''}>
                       <label for="formulaBasedLogicId">
-                        <span class="tealtxt-md">Use formula-based conditional branching logic</span>
+                        <span class="tealtxt-md">計算式の条件によって分岐先ステップを決定する</span>
                         <span
                             class="ml-xs sprites_v3 filled-tooltip" data-toggle="tooltip" title=""
-                            data-original-title="Enter the applicable units for the numeric input"></span>
+                            data-original-title="数値入力に該当する項目を選択してください"></span>
                       </label>
                     </span>
                   </div>
@@ -2970,12 +2970,12 @@
 
                 <div id="conditionalFormulaId">
                   <div class="col-md-12 p-none mt-lg mb-md">
-                    <div class="black-s-f">Define Formula and Destination Steps</div>
+                    <div class="black-s-f">条件式と分岐先ステップ</div>
                   </div>
                   <div class="col-md-12 p-none">
                     <ul class="pl_18">
                       <li class="display__flex__base">
-                        <span class="col-md-3 p-none">If V1 = True, Destination Step &nbsp;&nbsp;&nbsp;&nbsp;=</span>
+                        <span class="col-md-3 p-none">V1 = True の時, 分岐先ステップは &nbsp;&nbsp;&nbsp;&nbsp;=</span>
                         <input type="hidden" name="questionResponseSubTypeList[0].value"
                                value="true" id="conditionDestinationValueId0">
                         <div class="form-group sm-selection col-md-4 p-none">
@@ -2997,7 +2997,7 @@
                         </div>
                       </li>
                       <li class="display__flex__base">
-                        <span class="col-md-3 p-none">If V1 = False, Destination Step &nbsp;&nbsp;&nbsp;=</span>
+                        <span class="col-md-3 p-none">V1 = False の時, 分岐先ステップは &nbsp;&nbsp;&nbsp;=</span>
                         <input type="hidden" name="questionResponseSubTypeList[1].value"
                                value="false" id="conditionDestinationValueId1">
                         <div class="form-group sm-selection col-md-4 p-none">
