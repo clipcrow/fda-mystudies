@@ -296,6 +296,6 @@ public interface StudyMetaDataConstants {
   public static final String SCHEDULETYPE_REGULAR = "Regular";
   public static final String SCHEDULETYPE_ANCHORDATE = "AnchorDate";
   
-  public static final String ELIGIBILITY_TEXT = "この治験の被験者としての適正確認を行います。次の質問に答えてください。";
-  public static final String COMPREHENSION_TEXT = "この治験に参加するための理解度テストになります。次の設問に答えてください。:";
+  public static final String ELIGIBILITY_TEXT = "この治験の被験者としての適正確認を行います。次の質問に答えてください。 ";
+  public static final String COMPREHENSION_TEXT = "この治験に参加するための理解度テストになります。次の設問に答えてください。 ";
 }
