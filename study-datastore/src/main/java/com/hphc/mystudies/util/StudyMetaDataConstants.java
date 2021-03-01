@@ -30,16 +30,14 @@ public interface StudyMetaDataConstants {
   public static final String FAILURE = "FAILURE";
   public static final String INACTIVE = "INACTIVE";
 
-  public final String SESSION_EXPIRED_MSG = "Session expired.";
-  public final String CONNECTION_ERROR_MSG =
-      "Oops, something went wrong. Please try again after sometime.";
-  public final String ACCOUNT_DEACTIVATE_ERROR_MSG = "Your account has been deactivated.";
-  public final String INVALID_INPUT_ERROR_MSG = "Invalid input.";
-  public final String LOGIN_FAILURE = "Please check your login credentials.";
-  public final String INVALID_STUDY_ID = "Sorry, something went wrong. Please try again.";
-  public final String INVALID_ACTIVITY_ID = "ActivityId does not exists. Please check";
-  public final String INVALID_ENROLLMENT_TOKEN =
-      "Sorry, the enrollment token is not valid. Please check and try again.";
+  public final String SESSION_EXPIRED_MSG = "セッションが切れました。";
+  public final String CONNECTION_ERROR_MSG = "通信エラーが発生しました。しばらくしてから再度お試しください。";
+  public final String ACCOUNT_DEACTIVATE_ERROR_MSG = "あなたのアカウントはすでに無効化されています。";
+  public final String INVALID_INPUT_ERROR_MSG = "入力エラーです。";
+  public final String LOGIN_FAILURE = "ログイン情報をご確認ください。";
+  public final String INVALID_STUDY_ID = "システムエラーが発生しました。しばらくしてから再度お試しください。(STUDY_ID)";
+  public final String INVALID_ACTIVITY_ID = "システムエラーが発生しました。しばらくしてから再度お試しください。(ACTIVITY_ID)";
+  public final String INVALID_ENROLLMENT_TOKEN = "認証コードが間違っています。認証コードをご確認ください。";
 
   SimpleDateFormat SDF_DATE_TIME = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
   SimpleDateFormat SDF_DATE_TIME_12 = new SimpleDateFormat("MM/dd/yyyy hh:mm a");
@@ -52,12 +50,10 @@ public interface StudyMetaDataConstants {
   SimpleDateFormat DISPLAY_DATE_TIME = new SimpleDateFormat("EEE, MMM dd, yyyy 'at' hh:mm a");
   SimpleDateFormat DISPLAY_DATE_TIME_MIN = new SimpleDateFormat("dd MMM yyyy  HH:mm:ss");
   SimpleDateFormat SDF_DATE_TIME_TIMEZONE = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ssZ");
-  SimpleDateFormat SDF_DATE_TIME_TIMEZONE_MILLISECONDS =
-      new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSSZ");
+  SimpleDateFormat SDF_DATE_TIME_TIMEZONE_MILLISECONDS = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSSZ");
 
   public static final String SDF_DATE_TIME_PATTERN = "yyyy-MM-dd HH:mm:ss";
-  public static final String SDF_DATE_TIME_TIMEZONE_MILLISECONDS_PATTERN =
-      "yyyy-MM-dd'T'HH:mm:ss.SSSZ";
+  public static final String SDF_DATE_TIME_TIMEZONE_MILLISECONDS_PATTERN = "yyyy-MM-dd'T'HH:mm:ss.SSSZ";
   public static final String SDF_DATE_PATTERN = "yyyy-MM-dd";
 
   public static final String PASS_SALT = "BTCSoft";
@@ -101,8 +97,7 @@ public interface StudyMetaDataConstants {
 
   public static final String CONSENT_DOC_TYPE_NEW = "New";
   public static final String CONSENT_DOC_TYPE_AUTO = "Auto";
-  public static final String REASON_FOR_CONSENT =
-      "By agreeing to this you confirm that you read the consent and that you wish to take part in this research study.";
+  public static final String REASON_FOR_CONSENT = "同意書をよく読み、治験への参加の意思をご確認ください。";
 
   public static final String ACTIVITY_ACTIVE_TASK = "task";
   public static final String ACTIVITY_QUESTIONNAIRE = "questionnaire";
@@ -301,6 +296,6 @@ public interface StudyMetaDataConstants {
   public static final String SCHEDULETYPE_REGULAR = "Regular";
   public static final String SCHEDULETYPE_ANCHORDATE = "AnchorDate";
   
-  public static final String ELIGIBILITY_TEXT = "Answer these questions to determine your eligibility for the study";
-  public static final String COMPREHENSION_TEXT = "Take this comprehension test to assess your understanding of the study:";
+  public static final String ELIGIBILITY_TEXT = "この治験の被験者としての適正確認を行います。次の質問に答えてください。";
+  public static final String COMPREHENSION_TEXT = "この治験に参加するための理解度テストになります。次の設問に答えてください。:";
 }
