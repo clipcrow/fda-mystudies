@@ -29,7 +29,7 @@ public enum ErrorCode {
       400,
       "EC_0001",
       Constants.BAD_REQUEST,
-      "連続してログイン認証に失敗したため、アカウントは15分間ロックされています。 ロック期間が終了するまで待ってから再度サインインしてください。" ),
+      "Due to consecutive failed sign-in attempts with incorrect password, your account has been locked for a period of 15 minutes. Please check your registered email inbox for assistance to reset your password in this period or wait until the lock period is over to sign in again." ),
 
   TEMP_PASSWORD_EXPIRED(
       400,
